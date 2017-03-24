@@ -11,7 +11,7 @@ function round(number) {
 function monthNumber(year, month) {
     const number = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][month];
 
-    return month >= 2 && isLeapYear() ? number + 1 : number;
+    return month >= 2 && isLeapYear(year) ? number + 1 : number;
 }
 
 module.exports = {

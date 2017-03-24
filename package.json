@@ -1,0 +1,30 @@
+{
+  "name": "stardate-converter",
+  "version": "1.0.0",
+  "description": "Converts common date to Star Trek stardate",
+  "main": "index.js",
+  "keywords": [
+    "stardate",
+    "star trek",
+    "converter",
+    "calculator",
+    "date"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeroturnaround/stardate-converter.git"
+  },
+  "author": "Uku Pattak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeroturnaround/stardate-converter/issues"
+  },
+  "homepage": "https://github.com/zeroturnaround/stardate-converter#readme",
+  "devDependencies": {
+    "jest": "^19.0.2"
+  }
+}

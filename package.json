@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",

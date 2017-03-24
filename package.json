@@ -2,7 +2,6 @@
   "name": "stardate-converter",
   "version": "1.0.0",
   "description": "Converts common date to Star Trek stardate",
-  "main": "index.js",
   "keywords": [
     "stardate",
     "star trek",
@@ -10,6 +9,8 @@
     "calculator",
     "date"
   ],
+  "main": "index.js",
+  "files": ["index.js"],
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",

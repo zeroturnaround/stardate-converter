@@ -15,13 +15,13 @@ npm install stardate-converter --save
 ```js
 import stardateConverter from "stardate-converter";
 
-console.log(stardateConverter.convert(new Date(2017, 9, 24)));
+console.log(stardateConverter(new Date(2017, 9, 24)));
 ```
 
 This will output:
 
 ```
--305249.32
+-305189.04
 ```
 
 ## License

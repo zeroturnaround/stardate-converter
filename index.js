@@ -1,36 +1,44 @@
-const BASE_YEAR = 2323;
+var STAR_TREK_EPOCH = 2323;
+
+function starYear(year) {
+    return 1000 * (year - STAR_TREK_EPOCH);
+}
+
+function starDay(year, month, day) {
+    return 1000 / daysInYear(year) * (starMonth(year, month) + day - 1);
+}
+
+function daysInYear(year) {
+    return isLeapYear(year) ? 366 : 365;
+}
+
+function starMonth(year, month) {
+    var starMonth = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][month];
+
+    return month >= 2 && isLeapYear(year) ? starMonth + 1 : starMonth;
+}
 
 function isLeapYear(year) {
     return new Date(year, 1, 29).getMonth() === 1;
 }
 
+// Stardates are usually quoted to two decimal places.
 function round(number) {
     return Math.round(number * 100) / 100;
 }
 
-function monthNumber(year, month) {
-    const number = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][month];
+/**
+ * Converts given date into a stardate.
+ *
+ * Formula is based on http://www.wikihow.com/Calculate-Stardates
+ *
+ * @param {Date} date
+ * @return {Number} stardate
+ */
+module.exports = function(date) {
+    var year = date.getFullYear();
+    var month = date.getMonth();
+    var day = date.getDate();
 
-    return month >= 2 && isLeapYear(year) ? number + 1 : number;
-}
-
-module.exports = {
-    /**
-     * Converts given date into a stardate
-     *
-     * Formula is based on http://www.wikihow.com/Calculate-Stardates
-     *
-     * @param {Date} date
-     * @return {Number} stardate
-     */
-    convert: function(date) {
-        const year = date.getFullYear();
-        const month = date.getMonth();
-        const day = date.getDate();
-        const daysInYear = isLeapYear(year) ? 366 : 365;
-
-        const starYear = 1000 * (year - BASE_YEAR);
-
-        return round(starYear + 1000 / daysInYear * (monthNumber(year, month) + day - 1));
-    }
+    return round(starYear(year) + starDay(year, month, day));
 };

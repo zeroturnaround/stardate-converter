@@ -2,7 +2,7 @@ const stardateConverter = require("./index");
 
 describe("convert()", () => {
     function convert(date) {
-        return stardateConverter.convert(new Date(date.year, date.month, date.day));
+        return stardateConverter(new Date(date.year, date.month, date.day));
     }
 
     it("converts anti-leap year dates with ease", () => {

@@ -26,7 +26,7 @@ module.exports = {
     convert: function(date) {
         const year = date.getFullYear();
         const month = date.getMonth();
-        const day = date.getDay();
+        const day = date.getDate();
         const daysInYear = isLeapYear(year) ? 366 : 365;
 
         const starYear = 1000 * (year - BASE_YEAR);

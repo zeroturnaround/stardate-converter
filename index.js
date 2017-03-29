@@ -1,32 +1,5 @@
 var STAR_TREK_EPOCH = 2323;
 
-function starYear(year) {
-    return 1000 * (year - STAR_TREK_EPOCH);
-}
-
-function starDay(year, month, day) {
-    return 1000 / daysInYear(year) * (starMonth(year, month) + day - 1);
-}
-
-function daysInYear(year) {
-    return isLeapYear(year) ? 366 : 365;
-}
-
-function starMonth(year, month) {
-    var starMonth = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][month];
-
-    return month >= 2 && isLeapYear(year) ? starMonth + 1 : starMonth;
-}
-
-function isLeapYear(year) {
-    return new Date(year, 1, 29).getMonth() === 1;
-}
-
-// Stardates are usually quoted to two decimal places.
-function round(number) {
-    return Math.round(number * 100) / 100;
-}
-
 /**
  * Converts given date into a stardate.
  *
@@ -42,3 +15,33 @@ module.exports = function(date) {
 
     return round(starYear(year) + starDay(year, month, day));
 };
+
+function starYear(year) {
+    return 1000 * (year - STAR_TREK_EPOCH);
+}
+
+function starDay(year, month, day) {
+    return 1000 / daysInYear(year) * dayOfYear(year, month, day);
+}
+
+function daysInYear(year) {
+    return isLeapYear(year) ? 366 : 365;
+}
+
+function dayOfYear(year, month, day) {
+    var starMonth = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][month];
+
+    if (month >= 2 && isLeapYear(year)) {
+        starMonth ++;
+    }
+    return starMonth + day - 1;
+}
+
+function isLeapYear(year) {
+    return new Date(year, 1, 29).getMonth() === 1;
+}
+
+// Stardates are usually quoted to two decimal places.
+function round(number) {
+    return Math.round(number * 100) / 100;
+}

@@ -29,12 +29,12 @@ function daysInYear(year) {
 }
 
 function dayOfYear(year, month, day) {
-    var starMonth = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][month];
+    var dayOfYear = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][month] + day - 1;
 
     if (month >= 2 && isLeapYear(year)) {
-        starMonth ++;
+        dayOfYear ++;
     }
-    return starMonth + day - 1;
+    return dayOfYear;
 }
 
 function isLeapYear(year) {

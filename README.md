@@ -11,9 +11,9 @@ npm install stardate-converter --save
 ## Usage
 
 ```js
-import stardateConverter from "stardate-converter";
+import stardate from "stardate-converter";
 
-console.log(stardateConverter(new Date(2017, 9, 24)));
+console.log(stardate(new Date(2017, 9, 24)));
 ```
 
 Output:

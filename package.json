@@ -1,34 +1,29 @@
 {
-  "name": "stardate-converter",
-  "version": "2.0.0",
-  "description": "Converts common date to Star Trek stardate",
-  "keywords": [
-    "stardate",
-    "star trek",
-    "converter",
-    "calculator",
-    "date"
-  ],
-  "main": "index.js",
-  "files": [
-    "index.js"
-  ],
-  "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "prepublish": "npm test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zeroturnaround/stardate-converter.git"
-  },
-  "author": "Uku Pattak",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zeroturnaround/stardate-converter/issues"
-  },
-  "homepage": "https://github.com/zeroturnaround/stardate-converter#readme",
-  "devDependencies": {
-    "jest": "^19.0.2"
-  }
+    "name": "stardate-converter",
+    "version": "2.0.1",
+    "description": "Converts common date to Star Trek stardate",
+    "keywords": ["stardate", "star trek", "converter", "calculator", "date"],
+    "main": "index.js",
+    "files": ["index.js"],
+    "scripts": {
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "prepublish": "npm test"
+    },
+    "engines": {
+        "node": ">=6.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeroturnaround/stardate-converter.git"
+    },
+    "author": "Uku Pattak",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/zeroturnaround/stardate-converter/issues"
+    },
+    "homepage": "https://github.com/zeroturnaround/stardate-converter#readme",
+    "devDependencies": {
+        "jest": "^19.0.2"
+    }
 }

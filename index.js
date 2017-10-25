@@ -1,4 +1,4 @@
-var STAR_TREK_EPOCH = 2323;
+const STAR_TREK_EPOCH = 2323;
 
 /**
  * Converts given date into a stardate.
@@ -8,10 +8,10 @@ var STAR_TREK_EPOCH = 2323;
  * @param {Date} date
  * @return {Number} stardate
  */
-module.exports = function(date) {
-    var year = date.getFullYear();
-    var month = date.getMonth();
-    var day = date.getDate();
+module.exports = date => {
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const day = date.getDate();
 
     return round(starYear(year) + starDay(year, month, day));
 };
@@ -29,10 +29,10 @@ function daysInYear(year) {
 }
 
 function dayOfYear(year, month, day) {
-    var dayOfYear = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][month] + day - 1;
+    let dayOfYear = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][month] + day - 1;
 
     if (month >= 2 && isLeapYear(year)) {
-        dayOfYear ++;
+        dayOfYear++;
     }
     return dayOfYear;
 }

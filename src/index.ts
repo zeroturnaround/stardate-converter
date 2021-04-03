@@ -9,6 +9,9 @@ const STAR_TREK_EPOCH: number = 2323;
  * @return {Number} stardate
  */
 export default (date: Date = new Date()): number => {
+    if (typeof date !== typeof new Date()) {
+        throw Error('The input must be a date');
+    }
     const year: number = date.getFullYear();
     const month: number = date.getMonth();
     const day: number = date.getDate();

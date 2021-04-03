@@ -1,7 +1,7 @@
-const stardateConverter = require("./index");
+import stardateConverter from '../index';
 
 describe("convert()", () => {
-    function convert(date) {
+    const convert = (date: { year: number; month: number; day: number; }): number => {
         return stardateConverter(new Date(date.year, date.month, date.day));
     }
 
